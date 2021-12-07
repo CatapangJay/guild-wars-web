@@ -1,0 +1,24 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 94vh;
+  background: radial-gradient(
+      65.53% 65.53% at 50% 50%,
+      rgba(4, 4, 4, 0) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    linear-gradient(0deg, rgba(7, 25, 44, 0.68), rgba(7, 25, 44, 0.68)),
+    url(../../../assets/images/hero-background.jpg);
+  background-size: cover;
+  padding-left: 30rem;
+  padding-right: 30rem;
+
+  .logo {
+    height: 4rem;
+  }
+
+  .lead {
+    font-family: "Sorts Mill Goudy", serif;
+  }
+}
