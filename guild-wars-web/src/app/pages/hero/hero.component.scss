@@ -1,0 +1,49 @@
+@import "../../../styles.scss";
+
+.hero-bg {
+  height: 94vh !important;
+  background: radial-gradient(
+      65.53% 65.53% at 50% 50%,
+      rgba(4, 4, 4, 0) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    linear-gradient(0deg, rgba(7, 25, 44, 0.68), rgba(7, 25, 44, 0.68)),
+    url(../../../assets/images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .gw-logo {
+    width: 30rem;
+    height: auto;
+    padding: 1rem;
+
+    box-sizing: border-box;
+    border: 3px solid rgba(228, 190, 90, 0.4);
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .cta-section {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-top: 1.5rem;
+
+    .cta {
+      min-width: 10rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .token-address {
+    margin-top: 1rem;
+    color: #e4be5a;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+  }
+}

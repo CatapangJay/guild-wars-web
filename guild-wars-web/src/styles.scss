@@ -1,0 +1,128 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "~@angular/material" as mat;
+// Plus imports for other components in your app.
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sorts+Mill+Goudy&display=swap");
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$royalblue-palette: (
+  50: #e3eafd,
+  100: #becde2,
+  200: #9baac4,
+  300: #778aa7,
+  400: #5e7291,
+  500: #445c7d,
+  600: #374f6d,
+  700: #283d58,
+  800: #1a2c43,
+  900: #07192c,
+  contrast: (
+    900: #d1d1d1,
+    800: #acacac,
+    700: #8b8b8b,
+    600: #646464,
+    500: #515151,
+    400: #333333,
+    300: #131313,
+    200: #1d1d1d,
+    100: #0a0a0a,
+    50: #000000,
+    // ... continues to 900
+  ),
+);
+
+$royalyellow-palette: (
+  50: #fcfceb,
+  100: #f8f7cc,
+  200: #f4f1ac,
+  300: #f1ec8f,
+  400: #eee77a,
+  500: #ebe269,
+  600: #e9d363,
+  700: #e4bd5a,
+  800: #dea851,
+  900: #d38642,
+  contrast: (
+    900: #f8f8f8,
+    800: #f1f1f1,
+    700: #e7e7e7,
+    600: #646464,
+    500: #515151,
+    400: #333333,
+    300: #131313,
+    200: #1d1d1d,
+    100: #0a0a0a,
+    50: #000000,
+    // ... continues to 900
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$guild-wars-web-primary: mat.define-palette($royalblue-palette, 900);
+$guild-wars-web-accent: mat.define-palette($royalyellow-palette, 800);
+$guild-wars-web-typography: mat.define-typography-config(
+  $font-family: "Poppins",
+);
+
+// The warn palette is optional (defaults to red).
+$guild-wars-web-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$guild-wars-web-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $guild-wars-web-primary,
+      accent: $guild-wars-web-accent,
+      warn: $guild-wars-web-warn,
+    ),
+    typography: $guild-wars-web-typography,
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($guild-wars-web-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: #e7e7e7;
+}
+
+.text-secondary {
+  font-family: "Sorts Mill Goudy", serif;
+}
+
+.container {
+  display: flex;
+}
+
+.page-bg {
+  height: 100vh;
+}
+
+.align-middle {
+  align-items: center;
+  justify-content: center;
+}
